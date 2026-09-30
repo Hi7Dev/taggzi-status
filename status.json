@@ -1,0 +1,78 @@
+{
+ "updated": "2026-09-30T14:25:02+00:00",
+ "overall": "degraded",
+ "components": [
+  {
+   "id": "website",
+   "name": "Website",
+   "description": "taggzi.com, the shop and order pages",
+   "status": "degraded",
+   "raw": "degraded",
+   "latency_ms": 6082,
+   "message": "Homepage: slow"
+  },
+  {
+   "id": "tag_scans",
+   "name": "Tag scans",
+   "description": "Tapping or scanning a tag opens the pet's profile",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 985,
+   "message": ""
+  },
+  {
+   "id": "manual_lookup",
+   "name": "Manual tag lookup",
+   "description": "Typing a tag's ID at taggzi.com/find-pet",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1252,
+   "message": ""
+  },
+  {
+   "id": "app_login",
+   "name": "App & login",
+   "description": "The Taggzi app and signing in",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1358,
+   "message": ""
+  },
+  {
+   "id": "community_alerts",
+   "name": "Community alerts",
+   "description": "Lost-pet alerts for people nearby",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1490,
+   "message": ""
+  },
+  {
+   "id": "calling",
+   "name": "Private calling",
+   "description": "Finders calling owners from the pet page, without sharing numbers",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1197,
+   "message": ""
+  },
+  {
+   "id": "payments",
+   "name": "Payments",
+   "description": "Ordering tags and Taggzi Pro",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 397,
+   "message": ""
+  },
+  {
+   "id": "email",
+   "name": "Email & support",
+   "description": "Account emails, alerts and replies from our support team",
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 124,
+   "message": ""
+  }
+ ]
+}

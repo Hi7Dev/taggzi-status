@@ -1,0 +1,10 @@
+[
+ {
+  "component": "website",
+  "name": "Website",
+  "status": "degraded",
+  "started": "2026-09-30T14:25:02+00:00",
+  "resolved": null,
+  "detail": "Homepage: slow"
+ }
+]
