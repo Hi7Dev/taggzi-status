@@ -116,7 +116,7 @@ def main():
 
         day = uptime.setdefault(comp['id'], {}).setdefault(today, {'up': 0, 'total': 0})
         day['total'] += 1
-        day['up'] += 1 if shown == 'up' else (0.5 if shown == 'degraded' else 0)
+        day['up'] += 0 if shown == 'down' else 1   # slow / partly affected still counts as available
         for d in sorted(uptime[comp['id']])[:-90]:
             del uptime[comp['id']][d]
 
@@ -124,10 +124,10 @@ def main():
         if shown != old:
             changes.append((comp['name'], old, shown, message))
             open_inc = next((i for i in incidents if i['component'] == comp['id'] and not i.get('resolved')), None)
-            if shown != 'up' and not open_inc:
+            if shown == 'down' and not open_inc:   # incidents are confirmed outages only
                 incidents.insert(0, {'component': comp['id'], 'name': comp['name'], 'status': shown, 'started': NOW.isoformat(timespec='seconds'),
                                      'resolved': None, 'detail': message})
-            elif shown == 'up' and open_inc:
+            elif shown != 'down' and open_inc:
                 open_inc['resolved'] = NOW.isoformat(timespec='seconds')
             elif open_inc:
                 open_inc['status'] = shown
