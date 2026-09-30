@@ -33,6 +33,8 @@ jobs:
         env:
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+          PC_HEARTBEAT: ${{ vars.PC_HEARTBEAT }}
+          LAST_PC_BACKUP_DAILY: ${{ vars.LAST_PC_BACKUP_DAILY }}
         run: python3 check.py
 
       - name: Save results

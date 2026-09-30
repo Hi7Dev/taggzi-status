@@ -241,7 +241,39 @@ def main():
         lines = [f"{'✅' if new == 'up' else ('⚠️' if new == 'degraded' else '🔴')} {name}: {old} → {new}" + (f' ({msg})' if msg and new != 'up' else '')
                  for name, old, new, msg in changes]
         whatsapp('Taggzi status change\n' + '\n'.join(lines) + '\nhttps://status.taggzi.com')
+    pc_watch()
     print(json.dumps({'overall': overall, 'components': {c['id']: c['status'] for c in comps}, 'changes': len(changes)}))
+
+
+def pc_watch():
+    """Owner-only alarm for the office PC (not shown on the public page).
+
+    The PC's responder sets repo variable PC_HEARTBEAT every ~10 min and the recovery kit sets
+    LAST_PC_BACKUP_DAILY. This runs even when the PC is dead (the website also triggers these checks)."""
+    beat, backup = os.environ.get('PC_HEARTBEAT', ''), os.environ.get('LAST_PC_BACKUP_DAILY', '')
+    if not beat.isdigit():
+        return
+    st = load('pc_watch.json', {})
+    now = int(NOW.timestamp())
+    msgs = []
+    beat_age = (now - int(beat)) / 60
+    if beat_age > 30:
+        if now - st.get('pc_alerted', 0) > 6 * 3600:
+            msgs.append(f'🖥️ The Taggzi office PC has not checked in for {int(beat_age // 60)} h {int(beat_age % 60)} min. '
+                        'Incident responder, nightly maintenance and reminders are paused until it is back. '
+                        'If it has died: follow RECOVERY.md in github.com/Hi7Dev/taggzi-recovery.')
+            st['pc_alerted'] = now
+        st['pc_down'] = True
+    elif st.get('pc_down'):
+        msgs.append('✅ The Taggzi office PC is back online.')
+        st['pc_down'] = False
+        st['pc_alerted'] = 0
+    if backup.isdigit() and (now - int(backup)) > 50 * 3600 and now - st.get('backup_alerted', 0) > 12 * 3600:
+        msgs.append(f'💾 The PC recovery kit has not backed up for {int((now - int(backup)) / 3600)} h (expected daily at 03:30).')
+        st['backup_alerted'] = now
+    if msgs:
+        whatsapp('\n\n'.join(msgs))
+    save('pc_watch.json', st)
 
 
 if __name__ == '__main__':
