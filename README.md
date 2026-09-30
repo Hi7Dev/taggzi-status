@@ -20,7 +20,7 @@
   <a href="https://status.taggzi.com"><img src="https://raw.githubusercontent.com/Hi7Dev/taggzi-status/data/status.svg" alt="Live status of every Taggzi system" width="820"></a>
 </p>
 
-<sub>This card and the badges above are regenerated every few minutes by the checker, so this page always shows the current state. The full page with 90-day history and incidents is at <a href="https://status.taggzi.com">status.taggzi.com</a>.</sub>
+<sub>🔄 This card and the badges above update every 5 minutes. <b>Reload this page</b> to see the latest (GitHub pages don’t refresh themselves, and GitHub may cache the images for a few minutes). For a view that refreshes itself every minute, with 90-day history and incidents, open <a href="https://status.taggzi.com">status.taggzi.com</a> (backup: <a href="https://hi7dev.github.io/taggzi-status-backup/">hi7dev.github.io/taggzi-status-backup</a>).</sub>
 
 ## What we monitor
 
