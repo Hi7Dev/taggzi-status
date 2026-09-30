@@ -84,6 +84,25 @@ def run_check(c):
                 return 'up', int((time.time() - t) * 1000), ''
         except Exception as e:
             return 'down', int((time.time() - t) * 1000), type(e).__name__
+    if kind == 'ssl':
+        # Certificate valid for the hostname and not expiring soon.
+        t = time.time()
+        try:
+            ctx = ssl.create_default_context()
+            with socket.create_connection((c['host'], 443), timeout=c.get('timeout', 10)) as sock:
+                with ctx.wrap_socket(sock, server_hostname=c['host']) as tls:
+                    cert = tls.getpeercert()
+            ms = int((time.time() - t) * 1000)
+            left = (datetime.datetime.fromtimestamp(ssl.cert_time_to_seconds(cert['notAfter']), datetime.timezone.utc) - NOW).days
+            if left < 0:
+                return 'down', ms, 'certificate expired'
+            if left < c.get('warn_days', 21):
+                return 'degraded', ms, f'certificate expires in {left} days'
+            return 'up', ms, ''
+        except ssl.SSLCertVerificationError as e:
+            return 'down', int((time.time() - t) * 1000), 'certificate not valid (' + str(getattr(e, 'verify_message', '') or 'verify failed') + ')'
+        except Exception as e:
+            return 'down', int((time.time() - t) * 1000), type(e).__name__
     return 'down', 0, 'unknown check type'
 
 

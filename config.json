@@ -5,9 +5,23 @@
       "name": "Website",
       "description": "taggzi.com, the shop and order pages",
       "checks": [
-        { "label": "Homepage", "type": "http", "url": "https://taggzi.com/", "contains": "Taggzi" },
-        { "label": "Order page", "type": "http", "url": "https://taggzi.com/order-a-tag/" },
-        { "label": "Server", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "website" }
+        {
+          "label": "Homepage",
+          "type": "http",
+          "url": "https://taggzi.com/",
+          "contains": "Taggzi"
+        },
+        {
+          "label": "Order page",
+          "type": "http",
+          "url": "https://taggzi.com/order-a-tag/"
+        },
+        {
+          "label": "Server",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "website"
+        }
       ]
     },
     {
@@ -15,8 +29,18 @@
       "name": "Tag scans",
       "description": "Tapping or scanning a tag opens the pet's profile",
       "checks": [
-        { "label": "Tag lookup", "type": "http", "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/tag/short/PAW-N59N2", "contains": "\"status\":\"active\"" },
-        { "label": "Profiles", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "tag_scans" }
+        {
+          "label": "Tag lookup",
+          "type": "http",
+          "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/tag/short/PAW-N59N2",
+          "contains": "\"status\":\"active\""
+        },
+        {
+          "label": "Profiles",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "tag_scans"
+        }
       ]
     },
     {
@@ -24,8 +48,17 @@
       "name": "Manual tag lookup",
       "description": "Typing a tag's ID at taggzi.com/find-pet",
       "checks": [
-        { "label": "Find a pet page", "type": "http", "url": "https://taggzi.com/find-pet/" },
-        { "label": "Lookup", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "manual_lookup" }
+        {
+          "label": "Find a pet page",
+          "type": "http",
+          "url": "https://taggzi.com/find-pet/"
+        },
+        {
+          "label": "Lookup",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "manual_lookup"
+        }
       ]
     },
     {
@@ -33,9 +66,24 @@
       "name": "App & login",
       "description": "The Taggzi app and signing in",
       "checks": [
-        { "label": "Login page", "type": "http", "url": "https://taggzi.com/login/", "contains": "password" },
-        { "label": "App service", "type": "http", "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/config", "contains": "subscriptions_enabled" },
-        { "label": "Accounts", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "app_login" }
+        {
+          "label": "Login page",
+          "type": "http",
+          "url": "https://taggzi.com/login/",
+          "contains": "password"
+        },
+        {
+          "label": "App service",
+          "type": "http",
+          "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/config",
+          "contains": "subscriptions_enabled"
+        },
+        {
+          "label": "Accounts",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "app_login"
+        }
       ]
     },
     {
@@ -43,8 +91,17 @@
       "name": "Community alerts",
       "description": "Lost-pet alerts for people nearby",
       "checks": [
-        { "label": "Alerts page", "type": "http", "url": "https://taggzi.com/community-alerts/" },
-        { "label": "Alerts", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "community_alerts" }
+        {
+          "label": "Alerts page",
+          "type": "http",
+          "url": "https://taggzi.com/community-alerts/"
+        },
+        {
+          "label": "Alerts",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "community_alerts"
+        }
       ]
     },
     {
@@ -52,9 +109,24 @@
       "name": "Private calling",
       "description": "Finders calling owners from the pet page, without sharing numbers",
       "checks": [
-        { "label": "Call setup", "type": "http", "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/webrtc/config", "contains": "turn:" },
-        { "label": "Call relay", "type": "tcp", "host": "global.relay.metered.ca", "port": 443 },
-        { "label": "Signalling", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "calling" }
+        {
+          "label": "Call setup",
+          "type": "http",
+          "url": "https://taggzi.com/wp-json/taggzi-mobile/v1/webrtc/config",
+          "contains": "turn:"
+        },
+        {
+          "label": "Call relay",
+          "type": "tcp",
+          "host": "global.relay.metered.ca",
+          "port": 443
+        },
+        {
+          "label": "Signalling",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "calling"
+        }
       ]
     },
     {
@@ -62,7 +134,12 @@
       "name": "Payments",
       "description": "Ordering tags and Taggzi Pro",
       "checks": [
-        { "label": "Payments", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "payments" }
+        {
+          "label": "Payments",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "payments"
+        }
       ]
     },
     {
@@ -70,7 +147,24 @@
       "name": "Email & support",
       "description": "Account emails, alerts and replies from our support team",
       "checks": [
-        { "label": "Email", "type": "health", "url": "https://taggzi.com/wp-json/taggzi/v1/health", "component": "email" }
+        {
+          "label": "Email",
+          "type": "health",
+          "url": "https://taggzi.com/wp-json/taggzi/v1/health",
+          "component": "email"
+        }
+      ]
+    },
+    {
+      "id": "ssl",
+      "name": "Secure connection (SSL)",
+      "description": "The padlock certificate for taggzi.com",
+      "checks": [
+        {
+          "label": "taggzi.com",
+          "type": "ssl",
+          "host": "taggzi.com"
+        }
       ]
     }
   ]
