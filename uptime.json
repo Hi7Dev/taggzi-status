@@ -1,50 +1,56 @@
 {
  "website": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "tag_scans": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "manual_lookup": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "app_login": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "community_alerts": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "calling": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "payments": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
   }
  },
  "email": {
   "2026-09-30": {
-   "up": 2,
-   "total": 2
+   "up": 3,
+   "total": 3
+  }
+ },
+ "ssl": {
+  "2026-09-30": {
+   "up": 1,
+   "total": 1
   }
  }
 }
