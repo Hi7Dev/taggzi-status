@@ -1,15 +1,15 @@
 {
- "updated": "2026-09-30T16:18:43+00:00",
- "overall": "degraded",
+ "updated": "2026-09-30T16:20:27+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 20202,
-   "message": "Homepage: TimeoutError: The read operation timed out; Order page: HTTP 503"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1489,
+   "message": ""
   },
   {
    "id": "tag_scans",
@@ -17,7 +17,7 @@
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
    "raw": "up",
-   "latency_ms": 768,
+   "latency_ms": 930,
    "message": ""
   },
   {
@@ -26,7 +26,7 @@
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
    "raw": "up",
-   "latency_ms": 962,
+   "latency_ms": 731,
    "message": ""
   },
   {
@@ -35,7 +35,7 @@
    "description": "The Taggzi app and signing in",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1179,
+   "latency_ms": 1149,
    "message": ""
   },
   {
@@ -44,7 +44,7 @@
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1083,
+   "latency_ms": 728,
    "message": ""
   },
   {
@@ -53,7 +53,7 @@
    "description": "Finders calling owners from the pet page, without sharing numbers",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1057,
+   "latency_ms": 1074,
    "message": ""
   },
   {
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 184,
+   "latency_ms": 281,
    "message": ""
   }
  ]
