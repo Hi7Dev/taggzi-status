@@ -48,7 +48,10 @@ _health = {}
 def health(url):
     """Fetch the site's own health report once per run."""
     if url not in _health:
-        code, body, ms, err = fetch(url)
+        code, body, ms, err = fetch(url, 30)
+        if code != 200:   # one retry — a deploy or cold cache can make a single request slow
+            time.sleep(5)
+            code, body, ms, err = fetch(url, 30)
         try:
             _health[url] = (json.loads(body) if code == 200 else None, ms, err or (f'HTTP {code}' if code != 200 else ''))
         except Exception:
