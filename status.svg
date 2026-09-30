@@ -5,67 +5,67 @@
 <rect width="820" height="622" rx="18" fill="url(#bg)" stroke="#2a2521"/>
 <rect x="18" y="0" width="784" height="4" rx="2" fill="url(#gold)"/>
 <text x="32" y="52" font-size="24" font-weight="800" fill="#F2EDE8">Taggzi <tspan fill="#F0BF4A">Status</tspan></text>
-<text x="788" y="52" font-size="13" fill="#9C968C" text-anchor="end">Live · updated 30/09/2026 20:08 UK</text>
-<rect x="24" y="74" width="772" height="52" rx="12" fill="#f59e0b" fill-opacity=".12" stroke="#f59e0b" stroke-opacity=".45"/>
+<text x="788" y="52" font-size="13" fill="#9C968C" text-anchor="end">Live · updated 30/09/2026 20:15 UK</text>
+<rect x="24" y="74" width="772" height="52" rx="12" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-opacity=".45"/>
 <rect x="24" y="74" width="160" height="52" rx="12" fill="url(#shine)"><animate attributeName="x" from="-160" to="820" dur="4s" repeatCount="indefinite"/></rect>
-<circle cx="52" cy="100" r="7" fill="#f59e0b"/><circle cx="52" cy="100" r="7" fill="none" stroke="#f59e0b" stroke-width="2"><animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2s" repeatCount="indefinite"/></circle>
-<text x="72" y="106" font-size="18" font-weight="700" fill="#F2EDE8">Some systems degraded</text>
+<circle cx="52" cy="100" r="7" fill="#22c55e"/><circle cx="52" cy="100" r="7" fill="none" stroke="#22c55e" stroke-width="2"><animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2s" repeatCount="indefinite"/></circle>
+<text x="72" y="106" font-size="18" font-weight="700" fill="#F2EDE8">All systems operational</text>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.00s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="188" x2="788" y2="188" stroke="#2a2521"/>
-<circle cx="44" cy="166" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.00s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="166" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.00s" repeatCount="indefinite"/></circle>
 <text x="62" y="171" font-size="15" font-weight="650" fill="#F2EDE8">Website</text>
 <text x="630" y="171" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="154" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="171" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="154" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="171" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.15s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="234" x2="788" y2="234" stroke="#2a2521"/>
-<circle cx="44" cy="212" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.15s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="212" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.15s" repeatCount="indefinite"/></circle>
 <text x="62" y="217" font-size="15" font-weight="650" fill="#F2EDE8">Tag scans</text>
 <text x="630" y="217" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="200" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="217" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="200" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="217" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.30s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="280" x2="788" y2="280" stroke="#2a2521"/>
-<circle cx="44" cy="258" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.30s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="258" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.30s" repeatCount="indefinite"/></circle>
 <text x="62" y="263" font-size="15" font-weight="650" fill="#F2EDE8">Manual tag lookup</text>
 <text x="630" y="263" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="246" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="263" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="246" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="263" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.45s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="326" x2="788" y2="326" stroke="#2a2521"/>
-<circle cx="44" cy="304" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.45s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="304" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.45s" repeatCount="indefinite"/></circle>
 <text x="62" y="309" font-size="15" font-weight="650" fill="#F2EDE8">App &amp; login</text>
 <text x="630" y="309" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="292" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="309" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="292" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="309" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.60s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="372" x2="788" y2="372" stroke="#2a2521"/>
-<circle cx="44" cy="350" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.60s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="350" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.60s" repeatCount="indefinite"/></circle>
 <text x="62" y="355" font-size="15" font-weight="650" fill="#F2EDE8">Community alerts</text>
 <text x="630" y="355" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="338" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="355" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="338" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="355" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.75s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="418" x2="788" y2="418" stroke="#2a2521"/>
-<circle cx="44" cy="396" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.75s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="396" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.75s" repeatCount="indefinite"/></circle>
 <text x="62" y="401" font-size="15" font-weight="650" fill="#F2EDE8">Private calling</text>
 <text x="630" y="401" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="384" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="401" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="384" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="401" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.90s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="464" x2="788" y2="464" stroke="#2a2521"/>
-<circle cx="44" cy="442" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.90s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="442" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="0.90s" repeatCount="indefinite"/></circle>
 <text x="62" y="447" font-size="15" font-weight="650" fill="#F2EDE8">Payments</text>
 <text x="630" y="447" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="430" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="447" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="430" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="447" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.05s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="510" x2="788" y2="510" stroke="#2a2521"/>
-<circle cx="44" cy="488" r="6" fill="#f59e0b"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="1.05s" repeatCount="indefinite"/></circle>
+<circle cx="44" cy="488" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="1.05s" repeatCount="indefinite"/></circle>
 <text x="62" y="493" font-size="15" font-weight="650" fill="#F2EDE8">Email &amp; support</text>
 <text x="630" y="493" font-size="13" fill="#9C968C" text-anchor="end">100.00% uptime</text>
-<rect x="648" y="476" width="140" height="24" rx="12" fill="#f59e0b" fill-opacity=".14" stroke="#f59e0b" stroke-opacity=".5"/>
-<text x="718" y="493" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">Degraded</text></g>
+<rect x="648" y="476" width="140" height="24" rx="12" fill="#22c55e" fill-opacity=".14" stroke="#22c55e" stroke-opacity=".5"/>
+<text x="718" y="493" font-size="12" font-weight="700" fill="#22c55e" text-anchor="middle">Operational</text></g>
 <g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.20s" dur=".6s" fill="freeze"/>
 <line x1="32" y1="556" x2="788" y2="556" stroke="#2a2521"/>
 <circle cx="44" cy="534" r="6" fill="#22c55e"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="1.20s" repeatCount="indefinite"/></circle>
