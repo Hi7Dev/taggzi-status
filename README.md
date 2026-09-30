@@ -54,7 +54,7 @@ flowchart LR
     B -.->|outage / recovery| G["📱 WhatsApp alert<br/>to the team"]
 ```
 
-- **Independent:** it runs on GitHub, not on Taggzi's own hosting, so it keeps working if taggzi.com is down.
+- **Independent:** it runs on GitHub, not on Taggzi's own hosting, so it keeps working if taggzi.com is down. If even the status.taggzi.com address won't load, use the backup at **[hi7dev.github.io/taggzi-status-backup](https://hi7dev.github.io/taggzi-status-backup/)**, which doesn't rely on taggzi.com's DNS.
 - **Honest:** a single failed check shows as *degraded*. It counts as an *outage* only when it fails twice in a row, and only confirmed outages count against uptime.
 - **Safe:** the checks use side-effect-free lookups, so they never log fake tag scans or notify pet owners.
 - **Private:** no customer data is checked, stored or published here.
