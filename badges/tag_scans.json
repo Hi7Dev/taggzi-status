@@ -1,1 +1,1 @@
-{"schemaVersion": 1, "label": "tag scans", "message": "operational", "color": "brightgreen", "labelColor": "0C0A09", "cacheSeconds": 300}
+{"schemaVersion": 1, "label": "tag scans", "message": "degraded", "color": "orange", "labelColor": "0C0A09", "cacheSeconds": 300}
