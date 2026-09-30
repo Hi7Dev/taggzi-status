@@ -64,7 +64,7 @@ def run_check(c):
             return 'down', ms, err or f'HTTP {code}'
         if c.get('contains') and c['contains'] not in body:
             return 'down', ms, 'page loaded but looks wrong'
-        return ('degraded' if ms > c.get('slow_ms', 6000) else 'up'), ms, ('slow' if ms > c.get('slow_ms', 6000) else '')
+        return ('degraded' if ms > c.get('slow_ms', 10000) else 'up'), ms, ('slow' if ms > c.get('slow_ms', 10000) else '')
     if kind == 'health':
         rep, ms, err = health(c['url'])
         if rep is None:

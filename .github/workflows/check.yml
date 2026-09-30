@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 4
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # Results live on the `data` branch so the Pages site (main) never has to rebuild.
       - name: Get data branch
