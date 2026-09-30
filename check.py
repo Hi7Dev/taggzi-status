@@ -63,6 +63,9 @@ def run_check(c):
     kind = c['type']
     if kind == 'http':
         code, body, ms, err = fetch(c['url'], c.get('timeout', 20))
+        if code != c.get('expect', 200):   # one retry — deploys/CDN purges cause brief 5xx blips
+            time.sleep(8)
+            code, body, ms, err = fetch(c['url'], c.get('timeout', 20))
         if code != c.get('expect', 200):
             return 'down', ms, err or f'HTTP {code}'
         if c.get('contains') and c['contains'] not in body:
