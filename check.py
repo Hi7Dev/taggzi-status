@@ -114,6 +114,61 @@ def whatsapp(msg):
     fetch(url, 20)
 
 
+COLOURS = {'up': '#22c55e', 'degraded': '#f59e0b', 'down': '#ef4444'}
+WORDS = {'up': 'Operational', 'degraded': 'Degraded', 'down': 'Outage'}
+
+
+def esc(s):
+    return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
+
+
+def status_svg(comps, overall, uptime):
+    """Live, animated status card for the GitHub README (regenerated every run)."""
+    W, row, top = 820, 46, 150
+    H = top + row * len(comps) + 58
+    try:
+        from zoneinfo import ZoneInfo
+        uk = NOW.astimezone(ZoneInfo('Europe/London')).strftime('%d/%m/%Y %H:%M')
+    except Exception:
+        uk = NOW.strftime('%d/%m/%Y %H:%M UTC')
+    head = {'up': 'All systems operational', 'degraded': 'Some systems degraded', 'down': 'Partial outage'}[overall]
+    c = COLOURS[overall]
+    out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">',
+           '<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#171412"/><stop offset="1" stop-color="#0C0A09"/></linearGradient>',
+           '<linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#F0BF4A"/><stop offset="1" stop-color="#c6a85b"/></linearGradient>',
+           '<linearGradient id="shine" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".08"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>',
+           f'<rect width="{W}" height="{H}" rx="18" fill="url(#bg)" stroke="#2a2521"/>',
+           f'<rect x="18" y="0" width="{W-36}" height="4" rx="2" fill="url(#gold)"/>',
+           '<text x="32" y="52" font-size="24" font-weight="800" fill="#F2EDE8">Taggzi <tspan fill="#F0BF4A">Status</tspan></text>',
+           f'<text x="{W-32}" y="52" font-size="13" fill="#9C968C" text-anchor="end">Live · updated {uk} UK</text>',
+           f'<rect x="24" y="74" width="{W-48}" height="52" rx="12" fill="{c}" fill-opacity=".12" stroke="{c}" stroke-opacity=".45"/>',
+           f'<rect x="24" y="74" width="160" height="52" rx="12" fill="url(#shine)"><animate attributeName="x" from="-160" to="{W}" dur="4s" repeatCount="indefinite"/></rect>',
+           f'<circle cx="52" cy="100" r="7" fill="{c}"/><circle cx="52" cy="100" r="7" fill="none" stroke="{c}" stroke-width="2">'
+           '<animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2s" repeatCount="indefinite"/></circle>',
+           f'<text x="72" y="106" font-size="18" font-weight="700" fill="#F2EDE8">{esc(head)}</text>']
+    for i, comp in enumerate(comps):
+        y = top + i * row
+        col = COLOURS[comp['status']]
+        hist = uptime.get(comp['id'], {})
+        up = sum(d['up'] for d in hist.values()); tot = sum(d['total'] for d in hist.values())
+        pct = f'{up / tot * 100:.2f}%' if tot else '—'
+        delay = f'{i * 0.15:.2f}s'
+        out += [f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="{delay}" dur=".6s" fill="freeze"/>',
+                f'<line x1="32" y1="{y + row - 8}" x2="{W-32}" y2="{y + row - 8}" stroke="#2a2521"/>',
+                f'<circle cx="44" cy="{y + 16}" r="6" fill="{col}"><animate attributeName="opacity" values="1;.45;1" dur="2.4s" begin="{delay}" repeatCount="indefinite"/></circle>',
+                f'<text x="62" y="{y + 21}" font-size="15" font-weight="650" fill="#F2EDE8">{esc(comp["name"])}</text>',
+                f'<text x="{W-190}" y="{y + 21}" font-size="13" fill="#9C968C" text-anchor="end">{pct} uptime</text>',
+                f'<rect x="{W-172}" y="{y + 4}" width="140" height="24" rx="12" fill="{col}" fill-opacity=".14" stroke="{col}" stroke-opacity=".5"/>',
+                f'<text x="{W-102}" y="{y + 21}" font-size="12" font-weight="700" fill="{col}" text-anchor="middle">{WORDS[comp["status"]]}</text></g>']
+    out += [f'<text x="32" y="{H-22}" font-size="12" fill="#9C968C">Checked every 5 minutes from outside Taggzi’s servers · status.taggzi.com</text>', '</svg>']
+    return '\n'.join(out)
+
+
+def badge(label, status):
+    return {'schemaVersion': 1, 'label': label, 'message': WORDS[status].lower(), 'color': {'up': 'brightgreen', 'degraded': 'orange', 'down': 'red'}[status],
+            'labelColor': '0C0A09', 'cacheSeconds': 300}
+
+
 def main():
     cfg = json.load(open(os.path.join(HERE, 'config.json'), encoding='utf-8'))
     prev = {c['id']: c for c in load('status.json', {}).get('components', [])}
@@ -158,6 +213,24 @@ def main():
     save('status.json', {'updated': NOW.isoformat(timespec='seconds'), 'overall': overall, 'components': comps})
     save('uptime.json', uptime)
     save('incidents.json', incidents[:100])
+    # README assets: animated live card + shields.io endpoint badges.
+    with open(os.path.join(DATA, 'status.svg'), 'w', encoding='utf-8') as fh:
+        fh.write(status_svg(comps, overall, uptime))
+    os.makedirs(os.path.join(DATA, 'badges'), exist_ok=True)
+    with open(os.path.join(DATA, 'badges', 'overall.json'), 'w', encoding='utf-8') as fh:
+        json.dump(badge('taggzi', overall), fh)
+    for comp in comps:
+        with open(os.path.join(DATA, 'badges', comp['id'] + '.json'), 'w', encoding='utf-8') as fh:
+            json.dump(badge(comp['name'].lower(), comp['status']), fh)
+    uptimes = []
+    for comp in comps:
+        h = uptime.get(comp['id'], {})
+        t = sum(d['total'] for d in h.values())
+        if t: uptimes.append(sum(d['up'] for d in h.values()) / t)
+    avg = (sum(uptimes) / len(uptimes) * 100) if uptimes else 100
+    with open(os.path.join(DATA, 'badges', 'uptime.json'), 'w', encoding='utf-8') as fh:
+        json.dump({'schemaVersion': 1, 'label': 'uptime (90d)', 'message': f'{avg:.2f}%', 'color': 'brightgreen' if avg >= 99.5 else ('orange' if avg >= 97 else 'red'),
+                   'labelColor': '0C0A09', 'cacheSeconds': 300}, fh)
 
     # Alert only on confirmed outages and recoveries from them — not on slow/blip "degraded".
     changes = [c for c in changes if c[2] == 'down' or c[1] == 'down']
