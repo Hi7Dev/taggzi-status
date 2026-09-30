@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taggzi Status</title>
+<meta name="description" content="Live status of Taggzi — website, tag scans, app, payments, email, community alerts, private calling and tag lookup.">
+<link rel="icon" href="logo.png">
+<style>
+  :root { --bg:#0C0A09; --card:#171412; --line:#2a2521; --text:#F2EDE8; --dim:#9C968C; --gold:#F0BF4A;
+          --up:#22c55e; --deg:#f59e0b; --down:#ef4444; --none:#3a342e; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:860px; margin:0 auto; padding:28px 18px 60px; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:22px; }
+  header img { height:40px; }
+  header a { color:var(--dim); text-decoration:none; font-size:14px; }
+  header a:hover { color:var(--gold); }
+  .banner { border-radius:14px; padding:18px 20px; margin-bottom:10px; font-size:18px; font-weight:700; display:flex; align-items:center; gap:12px; }
+  .banner.up { background:#0f2a1a; border:1px solid #1f5a36; }
+  .banner.degraded { background:#2d2208; border:1px solid #6b4f10; }
+  .banner.down { background:#2f0f0f; border:1px solid #6b1d1d; }
+  .banner .dot { width:14px; height:14px; }
+  .sub { color:var(--dim); font-size:13px; margin:0 0 22px; }
+  .hint { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin-bottom:22px; font-size:14px; color:#d6d0c8; }
+  .hint strong { color:var(--gold); }
+  .hint a { color:var(--gold); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px 18px; margin-bottom:26px; }
+  .comp { padding:14px 0; border-bottom:1px solid var(--line); }
+  .comp:last-child { border-bottom:0; }
+  .row { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+  .name { font-weight:650; }
+  .desc { color:var(--dim); font-size:13px; }
+  .state { font-size:13px; font-weight:650; white-space:nowrap; display:flex; align-items:center; gap:7px; }
+  .dot { width:10px; height:10px; border-radius:50%; display:inline-block; flex:none; }
+  .up .dot, .dot.up { background:var(--up); } .degraded .dot, .dot.degraded { background:var(--deg); } .down .dot, .dot.down { background:var(--down); }
+  .state.up { color:var(--up); } .state.degraded { color:var(--deg); } .state.down { color:var(--down); }
+  .bars { display:flex; gap:2px; margin-top:10px; height:26px; }
+  .bars i { flex:1; border-radius:2px; background:var(--none); min-width:2px; }
+  .bars i.up { background:var(--up); } .bars i.degraded { background:var(--deg); } .bars i.down { background:var(--down); }
+  .barlegend { display:flex; justify-content:space-between; color:var(--dim); font-size:11px; margin-top:4px; }
+  .msg { color:var(--deg); font-size:12px; margin-top:4px; }
+  h2 { font-size:16px; margin:0 0 10px; color:var(--gold); }
+  .inc { padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .inc:last-child { border-bottom:0; }
+  .inc .when { color:var(--dim); font-size:12px; }
+  footer { color:var(--dim); font-size:12px; text-align:center; margin-top:30px; }
+  footer a { color:var(--dim); }
+  @media (max-width:520px) { .banner { font-size:16px; } .bars i:nth-child(-n+30) { display:none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="logo.png" alt="Taggzi">
+    <a href="https://taggzi.com">taggzi.com →</a>
+  </header>
+
+  <div id="banner" class="banner up"><span class="dot"></span><span id="banner-text">Checking…</span></div>
+  <p class="sub" id="updated">&nbsp;</p>
+
+  <div class="hint" id="hint"></div>
+
+  <div class="card" id="components"></div>
+
+  <h2>Recent incidents</h2>
+  <div class="card" id="incidents"><div class="inc">Loading…</div></div>
+
+  <footer>
+    Checked every 5 minutes from outside Taggzi's servers, so this page stays up even if taggzi.com is down.<br>
+    Need help? Email <a href="mailto:support@taggzi.com">support@taggzi.com</a> ·
+    <a href="https://taggzi.com/help/">Help centre</a>
+  </footer>
+</div>
+<script>
+(function () {
+  var BASE = 'https://raw.githubusercontent.com/Hi7Dev/taggzi-status/data/';
+  var LABEL = { up: 'Working normally', degraded: 'Slow or partly affected', down: 'Not working' };
+  var BANNER = { up: 'All Taggzi systems are working normally', degraded: 'Some Taggzi systems are slow or partly affected', down: 'Some Taggzi systems are not working' };
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function get(name) { return fetch(BASE + name + '?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
+  function ukDate(iso) { var d = new Date(iso); return d.toLocaleString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London' }); }
+  function ago(iso) { var m = Math.round((Date.now() - new Date(iso)) / 60000); return m < 1 ? 'just now' : m === 1 ? '1 minute ago' : m < 60 ? m + ' minutes ago' : Math.round(m / 60) + ' hours ago'; }
+
+  function render(status, uptime, incidents) {
+    if (!status) { document.getElementById('banner-text').textContent = 'Status is temporarily unavailable — please try again shortly.'; return; }
+    var b = document.getElementById('banner');
+    b.className = 'banner ' + status.overall;
+    document.getElementById('banner-text').textContent = BANNER[status.overall];
+    document.getElementById('updated').textContent = 'Last checked ' + ago(status.updated) + ' (' + ukDate(status.updated) + ' UK time).';
+    var stale = (Date.now() - new Date(status.updated)) > 30 * 60000;
+    document.getElementById('hint').innerHTML = status.overall === 'up'
+      ? '<strong>Is it just me?</strong> Everything is working on our side, so the problem is most likely with your device or connection. Try refreshing, switching between Wi-Fi and mobile data, or updating the app. Still stuck? Email <a href="mailto:support@taggzi.com">support@taggzi.com</a> and we\'ll help.'
+      : '<strong>We know about this.</strong> Part of Taggzi is affected right now and we\'re working on it — there\'s no need to report it. This page updates every few minutes.'
+      + (stale ? '<br><br>Note: this page hasn\'t been updated for a while, so it may not be current.' : '');
+
+    var days = [];
+    for (var i = 89; i >= 0; i--) { var d = new Date(Date.now() - i * 864e5); days.push(d.toISOString().slice(0, 10)); }
+    document.getElementById('components').innerHTML = status.components.map(function (c) {
+      var hist = (uptime && uptime[c.id]) || {}, up = 0, tot = 0;
+      var bars = days.map(function (day) {
+        var h = hist[day]; if (!h || !h.total) return '<i title="' + day + ': no data"></i>';
+        up += h.up; tot += h.total; var r = h.up / h.total;
+        var cls = r >= 0.999 ? 'up' : r >= 0.95 ? 'degraded' : 'down';
+        return '<i class="' + cls + '" title="' + day + ': ' + (r * 100).toFixed(2) + '% up"></i>';
+      }).join('');
+      var pct = tot ? (up / tot * 100).toFixed(2) + '% uptime' : '';
+      return '<div class="comp"><div class="row"><div><div class="name">' + esc(c.name) + '</div><div class="desc">' + esc(c.description) + '</div></div>'
+        + '<div class="state ' + c.status + '"><span class="dot"></span>' + LABEL[c.status] + '</div></div>'
+        + (c.status !== 'up' && c.message ? '<div class="msg">' + esc(c.message) + '</div>' : '')
+        + '<div class="bars">' + bars + '</div><div class="barlegend"><span>90 days ago</span><span>' + pct + '</span><span>Today</span></div></div>';
+    }).join('');
+
+    var inc = (incidents || []).slice(0, 10);
+    document.getElementById('incidents').innerHTML = inc.length ? inc.map(function (i) {
+      return '<div class="inc"><span class="dot ' + (i.resolved ? 'up' : i.status) + '"></span> <strong>' + esc(i.name) + '</strong> — '
+        + (i.resolved ? 'resolved' : LABEL[i.status].toLowerCase())
+        + '<div class="when">Started ' + ukDate(i.started) + (i.resolved ? ' · Resolved ' + ukDate(i.resolved) : ' · Ongoing') + '</div></div>';
+    }).join('') : '<div class="inc">No incidents recorded.</div>';
+  }
+
+  function load() { Promise.all([get('status.json'), get('uptime.json'), get('incidents.json')]).then(function (r) { render(r[0], r[1], r[2]); }); }
+  load();
+  setInterval(load, 60000);
+})();
+</script>
+</body>
+</html>

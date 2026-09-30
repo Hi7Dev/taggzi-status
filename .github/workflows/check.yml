@@ -1,0 +1,45 @@
+name: Status check
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+
+      # Results live on the `data` branch so the Pages site (main) never has to rebuild.
+      - name: Get data branch
+        run: |
+          git fetch origin data || true
+          if git show-ref --quiet refs/remotes/origin/data; then
+            git worktree add data origin/data
+          else
+            git worktree add --detach data && (cd data && git checkout --orphan data && git rm -rf . -q || true)
+          fi
+
+      - name: Run checks
+        env:
+          CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: python3 check.py
+
+      - name: Save results
+        run: |
+          cd data
+          git config user.name "taggzi-status"
+          git config user.email "status@taggzi.com"
+          git add -A
+          git commit -q -m "status $(date -u +%FT%TZ)" || exit 0
+          git push -q origin HEAD:data
