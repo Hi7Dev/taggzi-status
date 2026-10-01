@@ -1,0 +1,36 @@
+# Publish the status page with GitHub Actions ("workflow" Pages build) — 01/10/2026.
+# Replaces the legacy branch build, whose HTTPS certificate for status.taggzi.com never got issued.
+# Only the static page is published; live data still comes from the `data` branch at runtime.
+name: Publish status page
+
+on:
+  push:
+    branches: [main]
+    paths: ['index.html', 'banner.svg', 'logo.png', 'CNAME', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect site files
+        run: mkdir _site && cp index.html banner.svg logo.png CNAME _site/
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
