@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-01T05:53:35+00:00",
+ "updated": "2026-10-01T06:02:33+00:00",
  "overall": "up",
  "components": [
   {
@@ -8,7 +8,7 @@
    "description": "taggzi.com, the shop and order pages",
    "status": "up",
    "raw": "up",
-   "latency_ms": 612,
+   "latency_ms": 890,
    "message": ""
   },
   {
@@ -17,7 +17,7 @@
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
    "raw": "up",
-   "latency_ms": 921,
+   "latency_ms": 1012,
    "message": ""
   },
   {
@@ -26,7 +26,7 @@
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
    "raw": "up",
-   "latency_ms": 521,
+   "latency_ms": 760,
    "message": ""
   },
   {
@@ -35,7 +35,7 @@
    "description": "The Taggzi app and signing in",
    "status": "up",
    "raw": "up",
-   "latency_ms": 985,
+   "latency_ms": 1387,
    "message": ""
   },
   {
@@ -44,7 +44,7 @@
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
    "raw": "up",
-   "latency_ms": 566,
+   "latency_ms": 774,
    "message": ""
   },
   {
@@ -53,7 +53,7 @@
    "description": "Finders calling owners from the pet page, without sharing numbers",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1519,
+   "latency_ms": 1015,
    "message": ""
   },
   {
@@ -62,7 +62,7 @@
    "description": "Ordering tags and Taggzi Pro",
    "status": "up",
    "raw": "up",
-   "latency_ms": 579,
+   "latency_ms": 619,
    "message": ""
   },
   {
@@ -71,7 +71,7 @@
    "description": "Account emails, alerts and replies from our support team",
    "status": "up",
    "raw": "up",
-   "latency_ms": 67,
+   "latency_ms": 105,
    "message": ""
   },
   {
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 202,
+   "latency_ms": 295,
    "message": ""
   }
  ]
