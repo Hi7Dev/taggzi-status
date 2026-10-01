@@ -1,15 +1,15 @@
 {
- "updated": "2026-10-01T01:23:35+00:00",
- "overall": "degraded",
+ "updated": "2026-10-01T01:28:50+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
-   "status": "degraded",
-   "raw": "degraded",
-   "latency_ms": 18440,
-   "message": "Homepage: slow; Order page: slow"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 2923,
+   "message": ""
   },
   {
    "id": "tag_scans",
@@ -17,7 +17,7 @@
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
    "raw": "up",
-   "latency_ms": 3621,
+   "latency_ms": 600,
    "message": ""
   },
   {
@@ -26,7 +26,7 @@
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1340,
+   "latency_ms": 467,
    "message": ""
   },
   {
@@ -35,7 +35,7 @@
    "description": "The Taggzi app and signing in",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1214,
+   "latency_ms": 839,
    "message": ""
   },
   {
@@ -44,7 +44,7 @@
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1347,
+   "latency_ms": 513,
    "message": ""
   },
   {
@@ -53,7 +53,7 @@
    "description": "Finders calling owners from the pet page, without sharing numbers",
    "status": "up",
    "raw": "up",
-   "latency_ms": 885,
+   "latency_ms": 598,
    "message": ""
   },
   {
@@ -62,7 +62,7 @@
    "description": "Ordering tags and Taggzi Pro",
    "status": "up",
    "raw": "up",
-   "latency_ms": 466,
+   "latency_ms": 469,
    "message": ""
   },
   {
@@ -71,7 +71,7 @@
    "description": "Account emails, alerts and replies from our support team",
    "status": "up",
    "raw": "up",
-   "latency_ms": 110,
+   "latency_ms": 80,
    "message": ""
   },
   {
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 295,
+   "latency_ms": 197,
    "message": ""
   }
  ]
