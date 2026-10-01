@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-01T15:13:38+00:00",
- "overall": "degraded",
+ "updated": "2026-10-01T15:21:07+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
@@ -8,7 +8,7 @@
    "description": "taggzi.com, the shop and order pages",
    "status": "up",
    "raw": "up",
-   "latency_ms": 617,
+   "latency_ms": 616,
    "message": ""
   },
   {
@@ -17,7 +17,7 @@
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1355,
+   "latency_ms": 5030,
    "message": ""
   },
   {
@@ -26,7 +26,7 @@
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
    "raw": "up",
-   "latency_ms": 446,
+   "latency_ms": 426,
    "message": ""
   },
   {
@@ -35,7 +35,7 @@
    "description": "The Taggzi app and signing in",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1488,
+   "latency_ms": 1767,
    "message": ""
   },
   {
@@ -44,7 +44,7 @@
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
    "raw": "up",
-   "latency_ms": 478,
+   "latency_ms": 455,
    "message": ""
   },
   {
@@ -53,7 +53,7 @@
    "description": "Finders calling owners from the pet page, without sharing numbers",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1169,
+   "latency_ms": 1537,
    "message": ""
   },
   {
@@ -62,17 +62,17 @@
    "description": "Ordering tags and Taggzi Pro",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1126,
+   "latency_ms": 1104,
    "message": ""
   },
   {
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "degraded",
-   "raw": "degraded",
-   "latency_ms": 8065,
-   "message": "Email: support inbox unreachable — replies may be delayed"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 125,
+   "message": ""
   },
   {
    "id": "ssl",
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 179,
+   "latency_ms": 172,
    "message": ""
   }
  ]
