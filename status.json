@@ -1,78 +1,78 @@
 {
- "updated": "2026-10-01T13:43:38+00:00",
- "overall": "degraded",
+ "updated": "2026-10-01T13:51:12+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Server: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 799,
+   "message": ""
   },
   {
    "id": "tag_scans",
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Profiles: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 907,
+   "message": ""
   },
   {
    "id": "manual_lookup",
    "name": "Manual tag lookup",
    "description": "Typing a tag's ID at taggzi.com/find-pet",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Lookup: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 602,
+   "message": ""
   },
   {
    "id": "app_login",
    "name": "App & login",
    "description": "The Taggzi app and signing in",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "App service: HTTP 502; Accounts: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1550,
+   "message": ""
   },
   {
    "id": "community_alerts",
    "name": "Community alerts",
    "description": "Lost-pet alerts for people nearby",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Alerts: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 615,
+   "message": ""
   },
   {
    "id": "calling",
    "name": "Private calling",
    "description": "Finders calling owners from the pet page, without sharing numbers",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Signalling: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 929,
+   "message": ""
   },
   {
    "id": "payments",
    "name": "Payments",
    "description": "Ordering tags and Taggzi Pro",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Payments: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 694,
+   "message": ""
   },
   {
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 30234,
-   "message": "Email: TimeoutError: The read operation timed out"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 119,
+   "message": ""
   },
   {
    "id": "ssl",
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 213,
+   "latency_ms": 233,
    "message": ""
   }
  ]
