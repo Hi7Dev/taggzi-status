@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-01T11:10:48+00:00",
- "overall": "degraded",
+ "updated": "2026-10-01T11:13:35+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
@@ -8,7 +8,7 @@
    "description": "taggzi.com, the shop and order pages",
    "status": "up",
    "raw": "up",
-   "latency_ms": 589,
+   "latency_ms": 695,
    "message": ""
   },
   {
@@ -17,7 +17,7 @@
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1027,
+   "latency_ms": 1151,
    "message": ""
   },
   {
@@ -26,7 +26,7 @@
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
    "raw": "up",
-   "latency_ms": 444,
+   "latency_ms": 446,
    "message": ""
   },
   {
@@ -35,7 +35,7 @@
    "description": "The Taggzi app and signing in",
    "status": "up",
    "raw": "up",
-   "latency_ms": 1286,
+   "latency_ms": 1332,
    "message": ""
   },
   {
@@ -44,17 +44,17 @@
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
    "raw": "up",
-   "latency_ms": 481,
+   "latency_ms": 475,
    "message": ""
   },
   {
    "id": "calling",
    "name": "Private calling",
    "description": "Finders calling owners from the pet page, without sharing numbers",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 285,
-   "message": "Call setup: HTTP 502"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1097,
+   "message": ""
   },
   {
    "id": "payments",
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 180,
+   "latency_ms": 179,
    "message": ""
   }
  ]
