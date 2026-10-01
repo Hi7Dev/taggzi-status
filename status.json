@@ -1,78 +1,78 @@
 {
- "updated": "2026-10-01T07:54:09+00:00",
- "overall": "degraded",
+ "updated": "2026-10-01T07:55:18+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Server: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 925,
+   "message": ""
   },
   {
    "id": "tag_scans",
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Profiles: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 911,
+   "message": ""
   },
   {
    "id": "manual_lookup",
    "name": "Manual tag lookup",
    "description": "Typing a tag's ID at taggzi.com/find-pet",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Lookup: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 599,
+   "message": ""
   },
   {
    "id": "app_login",
    "name": "App & login",
    "description": "The Taggzi app and signing in",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Accounts: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 1122,
+   "message": ""
   },
   {
    "id": "community_alerts",
    "name": "Community alerts",
    "description": "Lost-pet alerts for people nearby",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Alerts: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 593,
+   "message": ""
   },
   {
    "id": "calling",
    "name": "Private calling",
    "description": "Finders calling owners from the pet page, without sharing numbers",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Signalling: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 871,
+   "message": ""
   },
   {
    "id": "payments",
    "name": "Payments",
    "description": "Ordering tags and Taggzi Pro",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Payments: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 845,
+   "message": ""
   },
   {
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "degraded",
-   "raw": "down",
-   "latency_ms": 15570,
-   "message": "Email: HTTP 500"
+   "status": "up",
+   "raw": "up",
+   "latency_ms": 278,
+   "message": ""
   },
   {
    "id": "ssl",
@@ -80,7 +80,7 @@
    "description": "The padlock certificate for taggzi.com",
    "status": "up",
    "raw": "up",
-   "latency_ms": 173,
+   "latency_ms": 206,
    "message": ""
   }
  ]
