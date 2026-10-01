@@ -29,7 +29,7 @@ def save(name, obj):
         json.dump(obj, f, ensure_ascii=False, indent=1)
 
 
-def fetch(url, timeout=20):
+def fetch(url, timeout=30):
     req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': '*/*', 'Cache-Control': 'no-cache'})
     t = time.time()
     try:
@@ -62,10 +62,13 @@ def health(url):
 def run_check(c):
     kind = c['type']
     if kind == 'http':
-        code, body, ms, err = fetch(c['url'], c.get('timeout', 20))
-        if code != c.get('expect', 200):   # one retry — deploys/CDN purges cause brief 5xx blips
+        slow = c.get('slow_ms', 10000)
+        code, body, ms, err = fetch(c['url'], c.get('timeout', 30))
+        if code != c.get('expect', 200) or ms > slow:   # one retry — deploys/CDN purges/a busy moment cause brief blips
             time.sleep(8)
-            code, body, ms, err = fetch(c['url'], c.get('timeout', 20))
+            code2, body2, ms2, err2 = fetch(c['url'], c.get('timeout', 30))
+            if code2 == c.get('expect', 200) or code != c.get('expect', 200):
+                code, body, ms, err = code2, body2, ms2, err2
         if code != c.get('expect', 200):
             return 'down', ms, err or f'HTTP {code}'
         if c.get('contains') and c['contains'] not in body:
@@ -184,15 +187,21 @@ def main():
         results = [(c.get('label', c['type']),) + run_check(c) for c in comp['checks']]
         worst = max(results, key=lambda r: RANK[r[1]])
         status = worst[1]
-        # A single failed run can be a blip — only report "down" after two in a row.
+        # Debounce (relaxed 01/10/2026 after a one-off 20i slowdown flagged everything): a single bad run is
+        # ignored, 2 bad runs in a row show "degraded", 3 in a row with the latest "down" show "down".
         was = prev.get(comp['id'], {})
-        if status == 'down' and was.get('raw') not in ('down',):
-            shown = 'degraded' if was.get('status') != 'down' else 'down'
+        bad = (int(was.get('bad_runs', 0)) + 1) if status != 'up' else 0
+        if status == 'up' or bad == 1:
+            shown = 'up'
+        elif status == 'down' and bad >= 3:
+            shown = 'down'
         else:
-            shown = status
+            shown = 'degraded'
         message = '; '.join(f'{r[0]}: {r[3]}' for r in results if r[1] != 'up' and r[3]) or ''
+        if shown == 'up':
+            message = ''   # don't show blip details on an 'Operational' row
         comps.append({'id': comp['id'], 'name': comp['name'], 'description': comp.get('description', ''),
-                      'status': shown, 'raw': status, 'latency_ms': max(r[2] for r in results), 'message': message})
+                      'status': shown, 'raw': status, 'bad_runs': bad, 'latency_ms': max(r[2] for r in results), 'message': message})
 
         day = uptime.setdefault(comp['id'], {}).setdefault(today, {'up': 0, 'total': 0})
         day['total'] += 1
