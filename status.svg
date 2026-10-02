@@ -5,7 +5,7 @@
 <rect width="820" height="622" rx="18" fill="url(#bg)" stroke="#2a2521"/>
 <rect x="18" y="0" width="784" height="4" rx="2" fill="url(#gold)"/>
 <text x="32" y="52" font-size="24" font-weight="800" fill="#F2EDE8">Taggzi <tspan fill="#F0BF4A">Status</tspan></text>
-<text x="788" y="52" font-size="13" fill="#9C968C" text-anchor="end">Live · updated 02/10/2026 11:50 UK</text>
+<text x="788" y="52" font-size="13" fill="#9C968C" text-anchor="end">Live · updated 02/10/2026 11:53 UK</text>
 <rect x="24" y="74" width="772" height="52" rx="12" fill="#22c55e" fill-opacity=".12" stroke="#22c55e" stroke-opacity=".45"/>
 <rect x="24" y="74" width="160" height="52" rx="12" fill="url(#shine)"><animate attributeName="x" from="-160" to="820" dur="4s" repeatCount="indefinite"/></rect>
 <circle cx="52" cy="100" r="7" fill="#22c55e"/><circle cx="52" cy="100" r="7" fill="none" stroke="#22c55e" stroke-width="2"><animate attributeName="r" values="7;15;7" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2s" repeatCount="indefinite"/></circle>
