@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-02T21:28:37+00:00",
- "overall": "degraded",
+ "updated": "2026-10-02T21:35:25+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 828,
+   "latency_ms": 1839,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 618,
+   "latency_ms": 793,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 595,
+   "latency_ms": 1099,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 956,
+   "latency_ms": 1118,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 658,
+   "latency_ms": 1164,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 616,
+   "latency_ms": 743,
    "message": ""
   },
   {
@@ -69,18 +69,18 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 402,
+   "latency_ms": 407,
    "message": ""
   },
   {
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "degraded",
-   "raw": "degraded",
-   "bad_runs": 2,
-   "latency_ms": 8052,
-   "message": "Email: support inbox unreachable — replies may be delayed"
+   "status": "up",
+   "raw": "up",
+   "bad_runs": 0,
+   "latency_ms": 96,
+   "message": ""
   },
   {
    "id": "ssl",
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 226,
+   "latency_ms": 300,
    "message": ""
   }
  ]
