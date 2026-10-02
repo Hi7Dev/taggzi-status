@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-02T15:04:23+00:00",
+ "updated": "2026-10-02T15:05:07+00:00",
  "overall": "up",
  "components": [
   {
@@ -7,9 +7,9 @@
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1613,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 252,
    "message": ""
   },
   {
@@ -17,9 +17,9 @@
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1400,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 257,
    "message": ""
   },
   {
@@ -27,9 +27,9 @@
    "name": "Manual tag lookup",
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1686,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 252,
    "message": ""
   },
   {
@@ -37,9 +37,9 @@
    "name": "App & login",
    "description": "The Taggzi app and signing in",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1709,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 303,
    "message": ""
   },
   {
@@ -47,9 +47,9 @@
    "name": "Community alerts",
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1659,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 253,
    "message": ""
   },
   {
@@ -57,9 +57,9 @@
    "name": "Private calling",
    "description": "Finders calling owners from the pet page, without sharing numbers",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1959,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 252,
    "message": ""
   },
   {
@@ -67,9 +67,9 @@
    "name": "Payments",
    "description": "Ordering tags and Taggzi Pro",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 11062,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 252,
    "message": ""
   },
   {
@@ -77,9 +77,9 @@
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 296,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 252,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 250,
+   "latency_ms": 173,
    "message": ""
   }
  ]
