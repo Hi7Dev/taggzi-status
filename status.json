@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T08:58:37+00:00",
+ "updated": "2026-10-07T09:04:20+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 5136,
+   "latency_ms": 674,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 872,
+   "latency_ms": 1325,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1869,
+   "latency_ms": 506,
    "message": ""
   },
   {
@@ -37,9 +37,9 @@
    "name": "App & login",
    "description": "The Taggzi app and signing in",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1271,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 30224,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1272,
+   "latency_ms": 629,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 813,
+   "latency_ms": 2232,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 466,
+   "latency_ms": 2907,
    "message": ""
   },
   {
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 187,
+   "latency_ms": 1150,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 223,
+   "latency_ms": 218,
    "message": ""
   }
  ]
