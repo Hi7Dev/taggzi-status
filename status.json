@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T15:20:49+00:00",
+ "updated": "2026-10-07T15:25:20+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1752,
+   "latency_ms": 2345,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1402,
+   "latency_ms": 1278,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1391,
+   "latency_ms": 706,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1339,
+   "latency_ms": 1492,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1504,
+   "latency_ms": 762,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1177,
+   "latency_ms": 1877,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 684,
+   "latency_ms": 584,
    "message": ""
   },
   {
@@ -77,9 +77,9 @@
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
    "status": "up",
-   "raw": "degraded",
-   "bad_runs": 1,
-   "latency_ms": 8160,
+   "raw": "up",
+   "bad_runs": 0,
+   "latency_ms": 97,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 215,
+   "latency_ms": 275,
    "message": ""
   }
  ]
