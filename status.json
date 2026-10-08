@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T22:23:34+00:00",
+ "updated": "2026-10-08T22:31:54+00:00",
  "overall": "up",
  "components": [
   {
@@ -7,9 +7,9 @@
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 875,
+   "raw": "degraded",
+   "bad_runs": 1,
+   "latency_ms": 11857,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 867,
+   "latency_ms": 1070,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 785,
+   "latency_ms": 1291,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1266,
+   "latency_ms": 1390,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 732,
+   "latency_ms": 1575,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 960,
+   "latency_ms": 1176,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 464,
+   "latency_ms": 10909,
    "message": ""
   },
   {
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 82,
+   "latency_ms": 1832,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 276,
+   "latency_ms": 248,
    "message": ""
   }
  ]
