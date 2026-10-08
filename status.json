@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T07:28:51+00:00",
+ "updated": "2026-10-08T07:35:15+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 969,
+   "latency_ms": 755,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 879,
+   "latency_ms": 858,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 736,
+   "latency_ms": 455,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1230,
+   "latency_ms": 1002,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 750,
+   "latency_ms": 464,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 880,
+   "latency_ms": 812,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 374,
+   "latency_ms": 494,
    "message": ""
   },
   {
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 77,
+   "latency_ms": 93,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 265,
+   "latency_ms": 172,
    "message": ""
   }
  ]
