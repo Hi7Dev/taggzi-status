@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-10T18:08:35+00:00",
+ "updated": "2026-10-10T18:15:24+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 948,
+   "latency_ms": 765,
    "message": ""
   },
   {
@@ -17,9 +17,9 @@
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 1135,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 30210,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 775,
+   "latency_ms": 451,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1362,
+   "latency_ms": 4940,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 808,
+   "latency_ms": 463,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1109,
+   "latency_ms": 1004,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 930,
+   "latency_ms": 697,
    "message": ""
   },
   {
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 182,
+   "latency_ms": 126,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 288,
+   "latency_ms": 175,
    "message": ""
   }
  ]
