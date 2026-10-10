@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-10T08:50:48+00:00",
- "overall": "up",
+ "updated": "2026-10-10T08:53:35+00:00",
+ "overall": "degraded",
  "components": [
   {
    "id": "website",
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 885,
+   "latency_ms": 987,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 4298,
+   "latency_ms": 856,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 676,
+   "latency_ms": 678,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1343,
+   "latency_ms": 1352,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 691,
+   "latency_ms": 673,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1207,
+   "latency_ms": 1052,
    "message": ""
   },
   {
@@ -76,11 +76,11 @@
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "up",
+   "status": "degraded",
    "raw": "degraded",
-   "bad_runs": 1,
+   "bad_runs": 2,
    "latency_ms": 8160,
-   "message": ""
+   "message": "Email: support inbox unreachable — replies may be delayed"
   },
   {
    "id": "ssl",
