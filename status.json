@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-10T15:38:35+00:00",
- "overall": "degraded",
+ "updated": "2026-10-10T15:45:23+00:00",
+ "overall": "up",
  "components": [
   {
    "id": "website",
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 832,
+   "latency_ms": 901,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 697,
+   "latency_ms": 1131,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 685,
+   "latency_ms": 706,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1029,
+   "latency_ms": 1593,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 677,
+   "latency_ms": 730,
    "message": ""
   },
   {
@@ -59,18 +59,18 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 677,
+   "latency_ms": 1156,
    "message": ""
   },
   {
    "id": "payments",
    "name": "Payments",
    "description": "Ordering tags and Taggzi Pro",
-   "status": "degraded",
-   "raw": "down",
-   "bad_runs": 2,
-   "latency_ms": 5074,
-   "message": "Payments: check failed"
+   "status": "up",
+   "raw": "up",
+   "bad_runs": 0,
+   "latency_ms": 696,
+   "message": ""
   },
   {
    "id": "email",
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 113,
+   "latency_ms": 199,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 245,
+   "latency_ms": 261,
    "message": ""
   }
  ]
