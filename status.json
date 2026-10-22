@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T16:28:35+00:00",
+ "updated": "2026-10-22T16:43:36+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 751,
+   "latency_ms": 754,
    "message": ""
   },
   {
@@ -17,9 +17,9 @@
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
    "status": "up",
-   "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 30271,
+   "raw": "up",
+   "bad_runs": 0,
+   "latency_ms": 1135,
    "message": ""
   },
   {
@@ -29,7 +29,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 616,
+   "latency_ms": 626,
    "message": ""
   },
   {
@@ -37,9 +37,9 @@
    "name": "App & login",
    "description": "The Taggzi app and signing in",
    "status": "up",
-   "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 30262,
+   "raw": "up",
+   "bad_runs": 0,
+   "latency_ms": 1575,
    "message": ""
   },
   {
@@ -49,7 +49,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 621,
+   "latency_ms": 636,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 1169,
+   "latency_ms": 1790,
    "message": ""
   },
   {
@@ -69,7 +69,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 816,
+   "latency_ms": 837,
    "message": ""
   },
   {
@@ -79,7 +79,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 208,
+   "latency_ms": 150,
    "message": ""
   },
   {
