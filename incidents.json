@@ -1,5 +1,69 @@
 [
  {
+  "component": "email",
+  "name": "Email & support",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Email: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "payments",
+  "name": "Payments",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Payments: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "calling",
+  "name": "Private calling",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Signalling: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "community_alerts",
+  "name": "Community alerts",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Alerts: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "app_login",
+  "name": "App & login",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Accounts: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "manual_lookup",
+  "name": "Manual tag lookup",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Lookup: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "tag_scans",
+  "name": "Tag scans",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Profiles: TimeoutError: The read operation timed out"
+ },
+ {
+  "component": "website",
+  "name": "Website",
+  "status": "down",
+  "started": "2026-10-24T07:58:34+00:00",
+  "resolved": null,
+  "detail": "Server: TimeoutError: The read operation timed out"
+ },
+ {
   "component": "payments",
   "name": "Payments",
   "status": "down",
