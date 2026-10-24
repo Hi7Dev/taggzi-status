@@ -31,6 +31,8 @@ jobs:
 
       - name: Run checks
         env:
+          PUSHOVER_TOKEN: ${{ secrets.PUSHOVER_TOKEN }}
+          PUSHOVER_USER: ${{ secrets.PUSHOVER_USER }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
           PC_HEARTBEAT: ${{ vars.PC_HEARTBEAT }}
