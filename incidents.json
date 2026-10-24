@@ -4,7 +4,7 @@
   "name": "Email & support",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Email: TimeoutError: The read operation timed out"
  },
  {
@@ -12,7 +12,7 @@
   "name": "Payments",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Payments: TimeoutError: The read operation timed out"
  },
  {
@@ -20,7 +20,7 @@
   "name": "Private calling",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Signalling: TimeoutError: The read operation timed out"
  },
  {
@@ -28,7 +28,7 @@
   "name": "Community alerts",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Alerts: TimeoutError: The read operation timed out"
  },
  {
@@ -36,7 +36,7 @@
   "name": "App & login",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Accounts: TimeoutError: The read operation timed out"
  },
  {
@@ -44,7 +44,7 @@
   "name": "Manual tag lookup",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Lookup: TimeoutError: The read operation timed out"
  },
  {
@@ -52,7 +52,7 @@
   "name": "Tag scans",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Profiles: TimeoutError: The read operation timed out"
  },
  {
@@ -60,7 +60,7 @@
   "name": "Website",
   "status": "down",
   "started": "2026-10-24T07:58:34+00:00",
-  "resolved": null,
+  "resolved": "2026-10-24T08:03:19+00:00",
   "detail": "Server: TimeoutError: The read operation timed out"
  },
  {
