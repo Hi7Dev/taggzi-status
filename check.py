@@ -4,7 +4,7 @@ Reads config.json, runs each component's checks, then updates (in ./data, the `d
   status.json     current state of every component
   uptime.json     per-component daily {up, total} counts, last 90 days
   incidents.json  automatic incidents (opened when a component goes down/degraded, closed on recovery)
-Optional WhatsApp alert on change (CallMeBot) if CALLMEBOT_PHONE / CALLMEBOT_APIKEY secrets are set.
+Alerts on change: Pushover (PUSHOVER_TOKEN / PUSHOVER_USER secrets); CallMeBot WhatsApp only if Pushover fails.
 """
 import json, os, socket, time, datetime, urllib.request, urllib.error, urllib.parse, ssl
 
@@ -112,12 +112,33 @@ def run_check(c):
     return 'down', 0, 'unknown check type'
 
 
+def pushover(msg, priority=0):
+    """Pushover to the owner (24/10/2026). True when accepted, False on failure, None when not configured."""
+    token, user = os.environ.get('PUSHOVER_TOKEN'), os.environ.get('PUSHOVER_USER')
+    if not token or not user:
+        return None
+    body = urllib.parse.urlencode({'token': token, 'user': user, 'title': 'Taggzi status', 'message': msg[:1024],
+                                   'priority': priority, 'url': 'https://status.taggzi.com', 'url_title': 'Status page'}).encode()
+    try:
+        with urllib.request.urlopen(urllib.request.Request('https://api.pushover.net/1/messages.json', data=body,
+                                                           headers={'User-Agent': UA}), timeout=20) as r:
+            return json.loads(r.read().decode()).get('status') == 1
+    except Exception:
+        return False
+
+
 def whatsapp(msg):
     phone, key = os.environ.get('CALLMEBOT_PHONE'), os.environ.get('CALLMEBOT_APIKEY')
     if not phone or not key:
         return
     url = 'https://api.callmebot.com/whatsapp.php?' + urllib.parse.urlencode({'phone': phone, 'text': msg, 'apikey': key})
     fetch(url, 20)
+
+
+def alert(msg, priority=0):
+    """One channel per alert (owner 11/10 + 13/10/2026): Pushover; CallMeBot WhatsApp (small allowance) only if Pushover fails."""
+    if not pushover(msg, priority):
+        whatsapp(msg)
 
 
 COLOURS = {'up': '#22c55e', 'degraded': '#f59e0b', 'down': '#ef4444'}
@@ -249,7 +270,7 @@ def main():
     if changes:
         lines = [f"{'✅' if new == 'up' else ('⚠️' if new == 'degraded' else '🔴')} {name}: {old} → {new}" + (f' ({msg})' if msg and new != 'up' else '')
                  for name, old, new, msg in changes]
-        whatsapp('Taggzi status change\n' + '\n'.join(lines) + '\nhttps://status.taggzi.com')
+        alert('Taggzi status change\n' + '\n'.join(lines) + '\nhttps://status.taggzi.com', 1 if any(c[2] == 'down' for c in changes) else 0)
     pc_watch()
     print(json.dumps({'overall': overall, 'components': {c['id']: c['status'] for c in comps}, 'changes': len(changes)}))
 
@@ -281,7 +302,7 @@ def pc_watch():
         msgs.append(f'💾 The PC recovery kit has not backed up for {int((now - int(backup)) / 3600)} h (expected daily at 03:30).')
         st['backup_alerted'] = now
     if msgs:
-        whatsapp('\n\n'.join(msgs))
+        alert('\n\n'.join(msgs), 1)
     save('pc_watch.json', st)
 
 
