@@ -1,86 +1,86 @@
 {
- "updated": "2026-10-30T14:46:18+00:00",
- "overall": "up",
+ "updated": "2026-10-30T14:48:34+00:00",
+ "overall": "degraded",
  "components": [
   {
    "id": "website",
    "name": "Website",
    "description": "taggzi.com, the shop and order pages",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 891,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 557,
+   "message": "Server: HTTP 503"
   },
   {
    "id": "tag_scans",
    "name": "Tag scans",
    "description": "Tapping or scanning a tag opens the pet's profile",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 19693,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 320,
+   "message": "Tag lookup: HTTP 503; Profiles: HTTP 503"
   },
   {
    "id": "manual_lookup",
    "name": "Manual tag lookup",
    "description": "Typing a tag's ID at taggzi.com/find-pet",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 730,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 460,
+   "message": "Lookup: HTTP 503"
   },
   {
    "id": "app_login",
    "name": "App & login",
    "description": "The Taggzi app and signing in",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 4336,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 5235,
+   "message": "Accounts: HTTP 503"
   },
   {
    "id": "community_alerts",
    "name": "Community alerts",
    "description": "Lost-pet alerts for people nearby",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 746,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 466,
+   "message": "Alerts: HTTP 503"
   },
   {
    "id": "calling",
    "name": "Private calling",
    "description": "Finders calling owners from the pet page, without sharing numbers",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 923,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 1167,
+   "message": "Signalling: HTTP 503"
   },
   {
    "id": "payments",
    "name": "Payments",
    "description": "Ordering tags and Taggzi Pro",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 537,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 320,
+   "message": "Payments: HTTP 503"
   },
   {
    "id": "email",
    "name": "Email & support",
    "description": "Account emails, alerts and replies from our support team",
-   "status": "up",
+   "status": "degraded",
    "raw": "down",
-   "bad_runs": 1,
-   "latency_ms": 537,
-   "message": ""
+   "bad_runs": 2,
+   "latency_ms": 320,
+   "message": "Email: HTTP 503"
   },
   {
    "id": "ssl",
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 262,
+   "latency_ms": 168,
    "message": ""
   }
  ]
