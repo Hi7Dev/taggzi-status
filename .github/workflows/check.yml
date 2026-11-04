@@ -46,4 +46,10 @@ jobs:
           git config user.email "status@taggzi.com"
           git add -A
           git commit -q -m "status $(date -u +%FT%TZ)" || exit 0
-          git push -q origin HEAD:data
+          # GitHub has the odd 5xx blip (04/11/2026 incident): retry before the run counts as failed.
+          for wait in 0 5 15 30 60; do
+            sleep "$wait"
+            git push -q origin HEAD:data && exit 0
+            echo "push failed, retrying"
+          done
+          exit 1
