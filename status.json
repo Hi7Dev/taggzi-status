@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T21:50:34+00:00",
+ "updated": "2026-11-15T21:53:39+00:00",
  "overall": "up",
  "components": [
   {
@@ -9,7 +9,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 2872,
+   "latency_ms": 3020,
    "message": ""
   },
   {
@@ -19,7 +19,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 394,
+   "latency_ms": 463,
    "message": ""
   },
   {
@@ -27,9 +27,9 @@
    "name": "Manual tag lookup",
    "description": "Typing a tag's ID at taggzi.com/find-pet",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 520,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 405,
    "message": ""
   },
   {
@@ -39,7 +39,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 405,
+   "latency_ms": 890,
    "message": ""
   },
   {
@@ -47,9 +47,9 @@
    "name": "Community alerts",
    "description": "Lost-pet alerts for people nearby",
    "status": "up",
-   "raw": "up",
-   "bad_runs": 0,
-   "latency_ms": 414,
+   "raw": "down",
+   "bad_runs": 1,
+   "latency_ms": 356,
    "message": ""
   },
   {
@@ -59,7 +59,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 206,
+   "latency_ms": 435,
    "message": ""
   },
   {
@@ -89,7 +89,7 @@
    "status": "up",
    "raw": "up",
    "bad_runs": 0,
-   "latency_ms": 18,
+   "latency_ms": 31,
    "message": ""
   }
  ]
